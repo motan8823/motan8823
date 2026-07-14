@@ -50,5 +50,57 @@
 
 </section>
 
+
+<script>
+
+const names = [
+    {
+        text:"森 颯詩",
+        font:"'Yu Mincho', serif"
+    },
+    {
+        text:"Soshi Mori",
+        font:"Arial, sans-serif"
+    },
+    {
+        text:"MORI SOSHI",
+        font:"Helvetica, sans-serif"
+    },
+    {
+        text:"𝑺𝒐𝒔𝒉𝒊 𝑴𝒐𝒓𝒊",
+        font:"cursive"
+    }
+];
+
+const title = document.getElementById("name");
+
+let index = 0;
+
+function changeName(){
+
+    title.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        title.textContent = names[index].text;
+        title.style.fontFamily = names[index].font;
+
+        title.style.opacity = 1;
+
+        index++;
+
+        if(index >= names.length){
+            index = 0;
+        }
+
+    },500);
+
+}
+
+changeName();
+
+setInterval(changeName,2500);
+
+</script>
 </body>
 </html>
