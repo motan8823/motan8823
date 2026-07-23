@@ -13,7 +13,7 @@
         }
 
         body{
-            font-family:sans-serif;
+            font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
             color:white;
             overflow:hidden;
         }
@@ -28,11 +28,11 @@
             z-index:-2;
         }
 
-        /* 暗くするフィルター */
+        /* 黒いフィルター */
         .overlay{
             position:fixed;
             inset:0;
-            background:rgba(0,0,0,.35);
+            background:rgba(0,0,0,.38);
             z-index:-1;
         }
 
@@ -90,12 +90,10 @@
 
 <body>
 
-    <!-- 背景動画 -->
     <video autoplay muted loop playsinline id="bg-video">
         <source src="001.mp4" type="video/mp4">
     </video>
 
-    <!-- 黒いオーバーレイ -->
     <div class="overlay"></div>
 
     <section>
