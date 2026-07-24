@@ -36,6 +36,34 @@
             z-index:-1;
         }
 
+        /* ナビゲーション */
+        nav{
+            position:fixed;
+            top:40px;
+            right:50px;
+
+            display:flex;
+            flex-direction:column;
+            align-items:flex-end;
+            gap:18px;
+
+            z-index:10;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:300;
+            letter-spacing:0.2em;
+            opacity:.8;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            opacity:1;
+        }
+
         section{
             height:100vh;
             display:flex;
@@ -69,6 +97,16 @@
 
         @media (max-width:768px){
 
+            nav{
+                top:24px;
+                right:24px;
+                gap:12px;
+            }
+
+            nav a{
+                font-size:12px;
+            }
+
             h1{
                 font-size:48px;
             }
@@ -95,6 +133,13 @@
     </video>
 
     <div class="overlay"></div>
+
+    <nav>
+        <a href="#design">design</a>
+        <a href="#art">art</a>
+        <a href="#profile">profile</a>
+        <a href="#contact">contact</a>
+    </nav>
 
     <section>
 
