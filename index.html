@@ -41,6 +41,161 @@
             position:fixed;
             top:40px;
             right:50px;
+            display:flex;
+            flex-direction:column;
+            align-items:flex-end;
+            gap:20px;
+            z-index:10;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-size:20px;
+            font-weight:300;
+            letter-spacing:0.15em;
+            opacity:.85;
+            transition:all .3s ease;
+        }
+
+        nav a:hover{
+            opacity:1;
+            transform:translateX(-8px);
+        }
+
+        section{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            text-align:center;
+            padding:20px;
+        }
+
+        h1{
+            font-size:72px;
+            font-weight:400;
+            letter-spacing:0.08em;
+        }
+
+        h2{
+            margin-top:14px;
+            font-size:20px;
+            font-weight:300;
+            letter-spacing:0.35em;
+            text-transform:uppercase;
+            opacity:0.9;
+        }
+
+        p{
+            margin-top:40px;
+            font-size:24px;
+            line-height:1.8;
+        }
+
+        @media (max-width:768px){
+
+            nav{
+                top:24px;
+                right:24px;
+                gap:14px;
+            }
+
+            nav a{
+                font-size:16px;
+            }
+
+            h1{
+                font-size:48px;
+            }
+
+            h2{
+                font-size:16px;
+                letter-spacing:0.25em;
+            }
+
+            p{
+                font-size:18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <video
+        id="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="001.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <nav>
+        <a href="design.html">design</a>
+        <a href="art.html">art</a>
+        <a href="profile.html">profile</a>
+        <a href="contact.html">contact</a>
+    </nav>
+
+    <section>
+
+        <h1>森 颯詩</h1>
+
+        <h2>mori soshi</h2>
+
+        <p>
+            幾通りもの世界を創造し、<br>
+            世の中にエンタメと啓発を届ける。
+        </p>
+
+    </section>
+
+    <script>
+        window.addEventListener("load", () => {
+            const video = document.getElementById("bg-video");
+
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+
+            const playVideo = () => {
+                video.play().catch(() => {});
+            };
+
+            playVideo();
+
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden) {
+                    playVideo();
+                }
+            });
+
+            window.addEventListener("focus", playVideo);
+
+            video.addEventListener("ended", () => {
+                playVideo();
+            });
+        });
+    </script>
+
+</body>
+</html>        }
+
+        /* ナビゲーション */
+        nav{
+            position:fixed;
+            top:40px;
+            right:50px;
 
             display:flex;
             flex-direction:column;
