@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design</title>
+<title>Profile | 森颯詩</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -13,25 +14,143 @@
 }
 
 body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
     background:#111;
     color:white;
-    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    line-height:1.9;
+}
+
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:80px 40px;
 }
 
 h1{
-    font-size:72px;
+    font-size:48px;
     font-weight:300;
+    margin-bottom:60px;
+    letter-spacing:.08em;
 }
+
+.profile{
+    display:flex;
+    gap:80px;
+    align-items:flex-start;
+}
+
+/* 仮の写真 */
+
+.photo{
+    width:320px;
+    height:420px;
+    background:#666;
+    border:2px dashed rgba(255,255,255,.4);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:rgba(255,255,255,.6);
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.text{
+    flex:1;
+    font-size:18px;
+}
+
+.name{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.message{
+    margin-top:40px;
+    padding-left:18px;
+    border-left:2px solid rgba(255,255,255,.4);
+}
+
+.back{
+    display:inline-block;
+    margin-top:70px;
+    color:white;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.5);
+    padding:12px 28px;
+    transition:.3s;
+}
+
+.back:hover{
+    background:white;
+    color:black;
+}
+
+@media(max-width:900px){
+
+.profile{
+    flex-direction:column;
+}
+
+.photo{
+    width:100%;
+    max-width:350px;
+    height:450px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>仮ページ</h1>
+<div class="container">
+
+<h1>Profile</h1>
+
+<div class="profile">
+
+<div class="photo">
+PHOTO
+</div>
+
+<div class="text">
+
+<div class="name">
+森 颯詩（もり そうし）
+</div>
+
+1998.08.22 京都生まれ／大阪市内在住<br><br>
+
+東山高等学校 卒業<br>
+京都芸術大学 卒業（旧 京都造形芸術大学）<br>
+新卒で大手報道番組のテロップ制作に従事。<br>
+その後、法人営業職へ転職。<br><br>
+
+現在は会社員として働く傍ら、デザイン・アーティスト活動に取り組んでいます。
+
+<div class="message">
+
+<strong>「幾通りもの世界を創造し、<br>
+世の中にエンタメと啓発を届ける。」</strong>
+
+<br><br>
+
+この理念を軸に、日々制作・発信を行っています。
+
+</div>
+
+<a href="index.html" class="back">
+← TOP
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
