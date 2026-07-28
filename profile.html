@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Profile | 森颯詩</title>
 
 <style>
@@ -15,207 +17,267 @@
 
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
-    color:#111;
     background:#fff;
+    color:#111;
 }
 
-/* ナビ */
+/* ==========================
+   Navigation
+========================== */
 
 nav{
+
     position:fixed;
     top:40px;
     right:50px;
+
     display:flex;
     flex-direction:column;
     align-items:flex-end;
     gap:20px;
+
     z-index:999;
+
 }
 
 nav a{
+
     color:#111;
     text-decoration:none;
     font-size:20px;
     font-weight:300;
     letter-spacing:.15em;
+
     transition:.25s;
+
 }
 
 nav a:hover{
+
     color:#ff0088;
     transform:translateX(-8px);
+
 }
 
 nav a.active{
+
     color:#ff0088;
+
 }
 
-/* 全体 */
+/* ==========================
+   Layout
+========================== */
 
 .container{
-    max-width:900px;
+
+    width:min(900px,90vw);
+
     margin:auto;
-    padding:40px 30px 80px;
+
+    padding-top:50px;
+    padding-bottom:120px;
+
 }
 
-/* 上画像 */
+/* ==========================
+   Hero
+========================== */
 
 .hero-wrap{
-    width:100%;
+
     overflow:hidden;
-    clip-path:circle(0% at 50% 50%);
-    animation:heroReveal 1.6s cubic-bezier(.75,0,.2,1) forwards;
+    border-radius:2px;
+
+    opacity:0;
+    transform:translateY(24px) scale(1.03);
+
+    animation:heroAppear 1.2s cubic-bezier(.2,.8,.2,1) forwards;
+
 }
 
 .hero{
+
     width:100%;
     display:block;
-    transform:scale(1.12);
-    animation:heroZoom 1.6s cubic-bezier(.75,0,.2,1) forwards;
-}
-
-@keyframes heroReveal{
-
-    0%{
-        clip-path:circle(0% at 50% 50%);
-    }
-
-    15%{
-        clip-path:circle(4% at 50% 50%);
-    }
-
-    35%{
-        clip-path:circle(12% at 50% 50%);
-    }
-
-    65%{
-        clip-path:circle(45% at 50% 50%);
-    }
-
-    100%{
-        clip-path:circle(75% at 50% 50%);
-    }
 
 }
 
-@keyframes heroZoom{
-
-    from{
-        transform:scale(1.12);
-    }
+@keyframes heroAppear{
 
     to{
-        transform:scale(1);
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
     }
 
 }
 
-/* キャッチ */
+/* ==========================
+   Catch
+========================== */
 
 .catch{
 
-    max-width:700px;
-    margin:60px auto 0;
+    margin-top:72px;
 
-    font-size:54px;
-    line-height:1.55;
+    text-align:center;
+
+    font-size:48px;
     font-weight:400;
+    line-height:1.55;
 
-    text-align:left;
+    letter-spacing:.02em;
 
     opacity:0;
     transform:translateY(20px);
 
-    animation:catchFade .8s ease .9s forwards;
+    animation:fadeUp .8s ease .5s forwards;
 
 }
 
-@keyframes catchFade{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* プロフィール */
+/* ==========================
+   Profile
+========================== */
 
 .profile{
 
-    margin-top:90px;
-    max-width:700px;
+    width:520px;
+
+    margin:110px auto 0;
 
 }
 
 .profile h1{
 
-    font-size:54px;
+    text-align:center;
+
+    font-size:58px;
     font-weight:500;
-    margin-bottom:10px;
+
+    margin-bottom:18px;
+
+}
+
+.profile ruby{
+
+    ruby-align:center;
 
 }
 
 .profile ruby rt{
 
-    font-size:14px;
+    font-size:12px;
     color:#111;
     font-weight:500;
-    transform:translateY(4px);
+
+    transform:translateY(5px);
+
+}
+
+.profile .info{
+
+    text-align:center;
+
+    font-size:18px;
+
+    margin-bottom:70px;
 
 }
 
 .profile p{
 
-    margin-top:28px;
-    font-size:18px;
-    line-height:1.65;
+    font-size:17px;
+    line-height:1.95;
+
+    font-weight:300;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+    @media(max-width:768px){
+
+    nav{
+
+        top:25px;
+        right:25px;
+        gap:14px;
+
+    }
+
+    nav a{
+
+        font-size:16px;
+
+    }
+
+    .container{
+
+        width:90vw;
+        padding-top:30px;
+
+    }
+
+    .catch{
+
+        font-size:34px;
+        margin-top:48px;
+
+    }
+
+    .profile{
+
+        width:100%;
+        margin-top:80px;
+
+    }
+
+    .profile h1{
+
+        font-size:42px;
+
+    }
+
+    .profile .info{
+
+        font-size:16px;
+        margin-bottom:50px;
+
+    }
+
+    .profile p{
+
+        font-size:16px;
+
+    }
 
 }
 
 footer{
 
-    margin-top:140px;
+    margin-top:160px;
+
     text-align:center;
-    color:#777;
+
     font-size:14px;
-    padding-bottom:40px;
-
-}
-
-@media(max-width:768px){
-
-    nav{
-        top:25px;
-        right:25px;
-        gap:14px;
-    }
-
-    nav a{
-        font-size:16px;
-    }
-
-    .container{
-        padding:25px;
-    }
-
-    .catch{
-        font-size:34px;
-        max-width:100%;
-    }
-
-    .profile h1{
-        font-size:40px;
-    }
-
-    .profile p{
-        font-size:16px;
-    }
+    color:#777;
 
 }
 
@@ -226,39 +288,54 @@ footer{
 <body>
 
 <nav>
+
     <a href="design.html">design</a>
     <a href="art.html">art</a>
     <a href="profile.html" class="active">profile</a>
     <a href="contact.html">contact</a>
+
 </nav>
 
 <div class="container">
 
     <div class="hero-wrap">
+
         <img src="profile-top.jpg" class="hero" alt="Profile Image">
+
     </div>
 
     <div class="catch">
+
         幾通りもの世界を創造し、<br>
         世の中にエンタメと啓発を届ける。
+
     </div>
 
     <div class="profile">
 
         <h1>
+
             森
             <ruby>颯<rt>そう</rt></ruby><ruby>詩<rt>し</rt></ruby>
+
         </h1>
 
+        <div class="info">
+
+            1998.08.22 京都生まれ／大阪市内在住
+
+        </div>
+
         <p>
-1998.08.22 京都生まれ／大阪市内在住<br><br>
 
 東山高等学校 卒業<br>
 京都芸術大学 卒業（旧 京都造形芸術大学）<br>
 新卒で大手報道番組のテロップ制作に従事。<br>
 その後、法人営業職へ転職。<br><br>
+
 現在は会社員として働く傍ら、<br>
 デザイン・アーティスト活動に取り組んでいます。
+
         </p>
 
     </div>
@@ -266,7 +343,9 @@ footer{
 </div>
 
 <footer>
+
 © 2026 Soshi Mori. All Rights Reserved.
+
 </footer>
 
 </body>
