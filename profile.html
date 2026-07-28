@@ -25,12 +25,10 @@ nav{
     position:fixed;
     top:40px;
     right:50px;
-
     display:flex;
     flex-direction:column;
     align-items:flex-end;
     gap:20px;
-
     z-index:999;
 }
 
@@ -66,10 +64,8 @@ nav a:hover{
 /* キャッチ */
 
 .catch{
-
     margin-top:60px;
     text-align:center;
-
     font-size:54px;
     line-height:1.55;
     font-weight:400;
@@ -78,92 +74,70 @@ nav a:hover{
 /* プロフィール */
 
 .profile{
-
     margin-top:90px;
-
     max-width:700px;
-
 }
 
 .profile h1{
-
     font-size:54px;
     font-weight:500;
     margin-bottom:10px;
-
+    letter-spacing:.03em;
 }
 
-.profile .ruby{
+.profile ruby{
+    ruby-align:center;
+}
 
-    font-size:16px;
-    margin-left:8px;
+.profile ruby rt{
+    font-size:14px;
     color:#666;
-
+    font-weight:400;
+    letter-spacing:0;
 }
 
 .profile p{
-
     margin-top:28px;
-
     font-size:18px;
     line-height:2;
-
 }
 
 /* フッター */
 
 footer{
-
     margin-top:140px;
-
     text-align:center;
-
     color:#777;
-
     font-size:14px;
-
     padding-bottom:40px;
-
 }
 
 @media(max-width:768px){
 
     nav{
-
         top:25px;
         right:25px;
         gap:14px;
-
     }
 
     nav a{
-
         font-size:16px;
-
     }
 
     .container{
-
         padding:25px;
-
     }
 
     .catch{
-
         font-size:34px;
-
     }
 
     .profile h1{
-
         font-size:40px;
-
     }
 
     .profile p{
-
         font-size:16px;
-
     }
 
 }
@@ -183,7 +157,7 @@ footer{
 
 <div class="container">
 
-    <img src="profile-top.jpg" class="hero">
+    <img src="profile-top.jpg" class="hero" alt="Profile Image">
 
     <div class="catch">
         幾通りもの世界を創造し、<br>
@@ -193,8 +167,11 @@ footer{
     <div class="profile">
 
         <h1>
-            森 颯詩
-            <span class="ruby">（そうし）</span>
+            森
+            <ruby>
+                颯詩
+                <rt>そうし</rt>
+            </ruby>
         </h1>
 
         <p>
