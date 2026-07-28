@@ -60,27 +60,38 @@ nav a:hover{
     width:100%;
     overflow:hidden;
 
-    clip-path:inset(0 45% 0 45%);
-
-    animation:heroReveal 1.4s cubic-bezier(.65,0,.95,.35) forwards;
+    clip-path:circle(0% at 50% 50%);
+    animation:heroReveal 1.6s cubic-bezier(.75,0,.2,1) forwards;
 }
 
 .hero{
     width:100%;
+    display:block;
 
-    transform:scale(1.08);
-
-    animation:heroZoom 1.4s cubic-bezier(.65,0,.95,.35) forwards;
+    transform:scale(1.12);
+    animation:heroZoom 1.6s cubic-bezier(.75,0,.2,1) forwards;
 }
 
 @keyframes heroReveal{
 
     0%{
-        clip-path:inset(0 45% 0 45%);
+        clip-path:circle(0% at 50% 50%);
+    }
+
+    15%{
+        clip-path:circle(4% at 50% 50%);
+    }
+
+    35%{
+        clip-path:circle(12% at 50% 50%);
+    }
+
+    65%{
+        clip-path:circle(45% at 50% 50%);
     }
 
     100%{
-        clip-path:inset(0);
+        clip-path:circle(75% at 50% 50%);
     }
 
 }
@@ -88,7 +99,7 @@ nav a:hover{
 @keyframes heroZoom{
 
     0%{
-        transform:scale(1.08);
+        transform:scale(1.12);
     }
 
     100%{
@@ -110,7 +121,7 @@ nav a:hover{
     opacity:0;
     transform:translateY(20px);
 
-    animation:catchFade .9s ease .7s forwards;
+    animation:catchFade .8s ease .9s forwards;
 
 }
 
@@ -230,17 +241,3 @@ footer{
 京都芸術大学 卒業（旧 京都造形芸術大学）<br>
 新卒で大手報道番組のテロップ制作に従事。<br>
 その後、法人営業職へ転職。<br><br>
-現在は会社員として働く傍ら、<br>
-デザイン・アーティスト活動に取り組んでいます。
-        </p>
-
-    </div>
-
-</div>
-
-<footer>
-© 2026 Soshi Mori. All Rights Reserved.
-</footer>
-
-</body>
-</html>
