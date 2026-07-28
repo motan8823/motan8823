@@ -63,7 +63,6 @@ nav a.active{
 .hero-wrap{
     width:100%;
     overflow:hidden;
-
     clip-path:circle(0% at 50% 50%);
     animation:heroReveal 1.6s cubic-bezier(.75,0,.2,1) forwards;
 }
@@ -71,7 +70,6 @@ nav a.active{
 .hero{
     width:100%;
     display:block;
-
     transform:scale(1.12);
     animation:heroZoom 1.6s cubic-bezier(.75,0,.2,1) forwards;
 }
@@ -102,11 +100,11 @@ nav a.active{
 
 @keyframes heroZoom{
 
-    0%{
+    from{
         transform:scale(1.12);
     }
 
-    100%{
+    to{
         transform:scale(1);
     }
 
@@ -116,11 +114,14 @@ nav a.active{
 
 .catch{
 
-    margin-top:60px;
-    text-align:center;
+    max-width:700px;
+    margin:60px auto 0;
+
     font-size:54px;
     line-height:1.55;
     font-weight:400;
+
+    text-align:left;
 
     opacity:0;
     transform:translateY(20px);
@@ -146,35 +147,45 @@ nav a.active{
 /* プロフィール */
 
 .profile{
+
     margin-top:90px;
     max-width:700px;
+
 }
 
 .profile h1{
+
     font-size:54px;
     font-weight:500;
     margin-bottom:10px;
+
 }
 
 .profile ruby rt{
+
     font-size:14px;
     color:#111;
     font-weight:500;
     transform:translateY(4px);
+
 }
 
 .profile p{
+
     margin-top:28px;
     font-size:18px;
     line-height:1.65;
+
 }
 
 footer{
+
     margin-top:140px;
     text-align:center;
     color:#777;
     font-size:14px;
     padding-bottom:40px;
+
 }
 
 @media(max-width:768px){
@@ -195,6 +206,7 @@ footer{
 
     .catch{
         font-size:34px;
+        max-width:100%;
     }
 
     .profile h1{
