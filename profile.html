@@ -53,72 +53,44 @@ nav a.active{
 /* ---------- Layout ---------- */
 
 .container{
-
     width:min(980px,92vw);
-
     margin:0 auto;
-
     padding:48px 0 120px;
-
 }
 
 /* ---------- Hero ---------- */
 
 .hero-wrap{
-
     width:80%;
     margin:0 auto;
-
     overflow:hidden;
 
     clip-path:circle(0% at 50% 50%);
     animation:heroReveal 1.6s cubic-bezier(.75,0,.2,1) forwards;
-
 }
 
 .hero{
-
     width:100%;
     display:block;
 
     transform:scale(1.12);
     animation:heroZoom 1.6s cubic-bezier(.75,0,.2,1) forwards;
-
 }
 
 @keyframes heroReveal{
 
-    0%{
-        clip-path:circle(0% at 50% 50%);
-    }
-
-    15%{
-        clip-path:circle(4% at 50% 50%);
-    }
-
-    35%{
-        clip-path:circle(12% at 50% 50%);
-    }
-
-    65%{
-        clip-path:circle(45% at 50% 50%);
-    }
-
-    100%{
-        clip-path:circle(75% at 50% 50%);
-    }
+    0%{clip-path:circle(0% at 50% 50%);}
+    15%{clip-path:circle(4% at 50% 50%);}
+    35%{clip-path:circle(12% at 50% 50%);}
+    65%{clip-path:circle(45% at 50% 50%);}
+    100%{clip-path:circle(75% at 50% 50%);}
 
 }
 
 @keyframes heroZoom{
 
-    from{
-        transform:scale(1.12);
-    }
-
-    to{
-        transform:scale(1);
-    }
+    from{transform:scale(1.12);}
+    to{transform:scale(1);}
 
 }
 
@@ -127,13 +99,11 @@ nav a.active{
 .catch{
 
     margin-top:58px;
-
     text-align:center;
 
     font-size:42px;
     font-weight:400;
     line-height:1.55;
-    letter-spacing:.01em;
 
     opacity:0;
     transform:translateY(20px);
@@ -145,40 +115,32 @@ nav a.active{
 @keyframes catchFade{
 
     from{
-
         opacity:0;
         transform:translateY(20px);
-
     }
 
     to{
-
         opacity:1;
         transform:translateY(0);
-
     }
 
 }
+
 /* ---------- Profile ---------- */
 
 .profile{
 
-    width:500px;
-
-    margin:118px auto 0;
+    width:min(700px,90vw);
+    margin:120px auto 0;
 
 }
 
 .profile h1{
 
     text-align:center;
-
     font-size:62px;
     font-weight:500;
-
-    margin-bottom:12px;
-
-    letter-spacing:.02em;
+    margin-bottom:18px;
 
 }
 
@@ -191,31 +153,50 @@ nav a.active{
 .profile ruby rt{
 
     font-size:13px;
-    color:#111;
     font-weight:500;
-
-    transform:translateY(5px);
 
 }
 
 .birth{
 
     text-align:center;
-
     font-size:18px;
     font-weight:300;
 
-    margin-bottom:62px;
-
-    color:#222;
+    margin-bottom:90px;
 
 }
 
-.profile p{
+.profile-text{
+
+    width:100%;
+    text-align:left;
+
+}
+
+.profile-text p{
 
     font-size:17px;
-    line-height:2;
+    line-height:1.8;
+    font-weight:300;
 
+}
+
+.profile-bottom{
+
+    margin-top:110px;
+
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+.profile-bottom p{
+
+    width:320px;
+
+    font-size:17px;
+    line-height:1.8;
     font-weight:300;
 
 }
@@ -223,65 +204,50 @@ nav a.active{
 @media(max-width:768px){
 
     nav{
-
         top:25px;
         right:25px;
         gap:14px;
-
     }
 
     nav a{
-
         font-size:16px;
-
     }
 
     .container{
-
         width:92vw;
         padding:32px 0 80px;
-
     }
 
     .hero-wrap{
-
         width:100%;
-
     }
 
     .catch{
-
-        margin-top:42px;
         font-size:30px;
-        line-height:1.5;
-
+        margin-top:40px;
     }
 
     .profile{
-
         width:100%;
         margin-top:80px;
-
     }
 
     .profile h1{
-
         font-size:44px;
-
     }
 
     .birth{
-
+        margin-bottom:60px;
         font-size:16px;
-        margin-bottom:46px;
-
     }
 
-    .profile p{
+    .profile-bottom{
+        justify-content:flex-start;
+        margin-top:70px;
+    }
 
-        font-size:16px;
-        line-height:1.9;
-
+    .profile-bottom p{
+        width:100%;
     }
 
 }
@@ -289,12 +255,9 @@ nav a.active{
 footer{
 
     margin-top:160px;
-
     text-align:center;
-
-    color:#777;
     font-size:14px;
-
+    color:#777;
     padding-bottom:40px;
 
 }
@@ -302,70 +265,68 @@ footer{
 </style>
 
 </head>
-
 <body>
 
 <nav>
-
     <a href="design.html">design</a>
     <a href="art.html">art</a>
     <a href="profile.html" class="active">profile</a>
     <a href="contact.html">contact</a>
-
 </nav>
 
 <div class="container">
 
     <div class="hero-wrap">
-
         <img src="profile-top.jpg" class="hero" alt="Profile Image">
-
     </div>
 
     <div class="catch">
-
         幾通りもの世界を創造し、<br>
         世の中にエンタメと啓発を届ける。
-
     </div>
 
     <div class="profile">
 
         <h1>
-
             森
             <ruby>颯<rt>そう</rt></ruby><ruby>詩<rt>し</rt></ruby>
-
         </h1>
 
         <div class="birth">
-
             1998.08.22　京都生まれ／大阪市内在住
+        </div>
+
+        <div class="profile-text">
+
+            <p>
+                東山高等学校 卒業<br>
+                京都芸術大学 卒業（旧 京都造形芸術大学）<br>
+                新卒で大手報道番組のテロップ制作に従事。<br>
+                その後、法人営業職へ転職。<br><br>
+
+                現在は会社員として働く傍ら、<br>
+                デザイン・アーティスト活動に取り組んでいます。
+            </p>
 
         </div>
 
-        <p>
+        <div class="profile-bottom">
 
-東山高等学校 卒業<br>
-京都芸術大学 卒業（旧 京都造形芸術大学）<br>
-新卒で大手報道番組のテロップ制作に従事。<br>
-その後、法人営業職へ転職。<br><br>
+            <p>
+                アイデアを形にするところから、<br>
+                グラフィックデザインまで<br>
+                一貫して手掛けます。
+            </p>
 
-現在は会社員として働く傍ら、<br>
-デザイン・アーティスト活動に取り組んでいます。
-
-        </p>
+        </div>
 
     </div>
 
 </div>
 
 <footer>
-
-© 2026 Soshi Mori. All Rights Reserved.
-
+    © 2026 Soshi Mori. All Rights Reserved.
 </footer>
 
 </body>
-
 </html>
