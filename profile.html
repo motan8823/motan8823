@@ -78,127 +78,95 @@ nav a.active{
 }
 
 @keyframes heroReveal{
-
     0%{clip-path:circle(0% at 50% 50%);}
     15%{clip-path:circle(4% at 50% 50%);}
     35%{clip-path:circle(12% at 50% 50%);}
     65%{clip-path:circle(45% at 50% 50%);}
     100%{clip-path:circle(75% at 50% 50%);}
-
 }
 
 @keyframes heroZoom{
-
     from{transform:scale(1.12);}
     to{transform:scale(1);}
-
 }
 
 /* ---------- Catch ---------- */
 
 .catch{
-
     margin-top:58px;
     text-align:center;
-
     font-size:42px;
     font-weight:400;
     line-height:1.55;
-
     opacity:0;
     transform:translateY(20px);
-
     animation:catchFade .8s ease .9s forwards;
-
 }
 
 @keyframes catchFade{
-
     from{
         opacity:0;
         transform:translateY(20px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
 /* ---------- Profile ---------- */
 
 .profile{
-
     width:min(700px,90vw);
     margin:120px auto 0;
-
 }
 
 .profile h1{
-
     text-align:center;
     font-size:62px;
     font-weight:500;
     margin-bottom:18px;
-
 }
 
 .profile ruby{
-
     ruby-align:center;
-
 }
 
 .profile ruby rt{
-
     font-size:13px;
     font-weight:500;
-
 }
 
 .birth{
-
     text-align:center;
     font-size:18px;
     font-weight:300;
-
     margin-bottom:90px;
-
 }
 
 .profile-text{
-
     width:100%;
-    text-align:left;
-
 }
 
 .profile-text p{
-
     font-size:17px;
     line-height:1.8;
     font-weight:300;
-
+    text-align:left;
 }
 
 .profile-bottom{
-
-    margin-top:110px;
-
+    margin-top:60px;
     display:flex;
-    justify-content:flex-end;
-
+    justify-content:flex-start;
 }
 
 .profile-bottom p{
-
-    width:320px;
-
+    width:100%;
     font-size:17px;
     line-height:1.8;
     font-weight:300;
-
+    text-align:left;
 }
 
 @media(max-width:768px){
@@ -237,13 +205,12 @@ nav a.active{
     }
 
     .birth{
-        margin-bottom:60px;
         font-size:16px;
+        margin-bottom:60px;
     }
 
     .profile-bottom{
-        justify-content:flex-start;
-        margin-top:70px;
+        margin-top:50px;
     }
 
     .profile-bottom p{
@@ -253,13 +220,11 @@ nav a.active{
 }
 
 footer{
-
     margin-top:160px;
     text-align:center;
     font-size:14px;
     color:#777;
     padding-bottom:40px;
-
 }
 
 </style>
@@ -297,7 +262,6 @@ footer{
         </div>
 
         <div class="profile-text">
-
             <p>
                 東山高等学校 卒業<br>
                 京都芸術大学 卒業（旧 京都造形芸術大学）<br>
@@ -307,17 +271,14 @@ footer{
                 現在は会社員として働く傍ら、<br>
                 デザイン・アーティスト活動に取り組んでいます。
             </p>
-
         </div>
 
         <div class="profile-bottom">
-
             <p>
                 アイデアを形にするところから、<br>
                 グラフィックデザインまで<br>
                 一貫して手掛けます。
             </p>
-
         </div>
 
     </div>
