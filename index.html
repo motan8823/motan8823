@@ -28,6 +28,15 @@
             z-index:-2;
         }
 
+        /* Safari 再生ボタン非表示 */
+        video::-webkit-media-controls{
+            display:none !important;
+        }
+
+        video::-webkit-media-controls-start-playback-button{
+            display:none !important;
+        }
+
         /* 黒いフィルター */
         .overlay{
             position:fixed;
@@ -159,34 +168,33 @@
 
     </section>
 
+
     <script>
         window.addEventListener("load", () => {
 
             const video = document.getElementById("bg-video");
 
             video.muted = true;
+            video.setAttribute("muted", "");
 
-            const playVideo = () => {
-                video.play()
-                .then(() => {
+            const playVideo = async () => {
+                try{
+                    await video.play();
                     console.log("動画再生成功");
-                })
-                .catch(error => {
+                }catch(error){
                     console.log("動画再生失敗", error);
-                });
+                }
             };
 
             playVideo();
 
             document.addEventListener("visibilitychange", () => {
-                if (!document.hidden) {
+                if(!document.hidden){
                     playVideo();
                 }
             });
 
             window.addEventListener("focus", playVideo);
-
-            video.addEventListener("ended", playVideo);
 
         });
     </script>
