@@ -132,14 +132,14 @@
         muted
         loop
         playsinline
+        webkit-playsinline
         preload="auto"
     >
         <source src="001.mp4" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
-
-    <nav>
+        <nav>
         <a href="design.html">design</a>
         <a href="art.html">art</a>
         <a href="profile.html">profile</a>
@@ -161,10 +161,19 @@
 
     <script>
         window.addEventListener("load", () => {
+
             const video = document.getElementById("bg-video");
 
+            video.muted = true;
+
             const playVideo = () => {
-                video.play().catch(() => {});
+                video.play()
+                .then(() => {
+                    console.log("動画再生成功");
+                })
+                .catch(error => {
+                    console.log("動画再生失敗", error);
+                });
             };
 
             playVideo();
@@ -178,6 +187,7 @@
             window.addEventListener("focus", playVideo);
 
             video.addEventListener("ended", playVideo);
+
         });
     </script>
 
