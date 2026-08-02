@@ -163,6 +163,16 @@ nav a.active{
 
 
 
+/* mail hover */
+
+.mail-link:hover{
+
+    color:#ff0088 !important;
+
+}
+
+
+
 /* note演出 */
 
 
@@ -242,6 +252,90 @@ nav a.active{
 
 
 
+/* mail演出 */
+
+
+.mail-message{
+
+    position:fixed;
+
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:translate(-50%,-50%);
+
+
+    font-size:42px;
+
+
+    font-weight:300;
+
+
+    letter-spacing:.1em;
+
+
+    color:#fff;
+
+
+    opacity:0;
+
+
+    transition:.8s ease;
+
+
+    z-index:10000;
+
+}
+
+
+
+
+.copy-message{
+
+    position:fixed;
+
+
+    top:55%;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:16px;
+
+
+    letter-spacing:.2em;
+
+
+    color:#ff0088;
+
+
+    opacity:0;
+
+
+    transition:.3s ease;
+
+
+    z-index:10001;
+
+}
+
+
+
+.copy-message.show{
+
+    opacity:1;
+
+}
+
+
+
+
 body.note-active{
 
     background:#000;
@@ -253,8 +347,20 @@ body.note-active{
 
 
 
+body.mail-active{
+
+    background:#000;
+
+    color:#fff;
+
+}
+
+
+
 body.note-active nav a,
-body.note-active .contact-links a{
+body.note-active .contact-links a,
+body.mail-active nav a,
+body.mail-active .contact-links a{
 
     color:#fff;
 
@@ -283,6 +389,14 @@ body.note-active .note-message{
     right:80px;
 
     bottom:60px;
+
+    opacity:1;
+
+}
+
+
+
+body.mail-active .mail-message{
 
     opacity:1;
 
@@ -345,6 +459,14 @@ body.note-active .note-message{
 
 
 
+    .mail-message{
+
+        font-size:26px;
+
+    }
+
+
+
     body.note-active .note-title{
 
         top:30px;
@@ -363,6 +485,7 @@ body.note-active .note-message{
 
 
 }
+
 
 
 </style>
@@ -406,6 +529,14 @@ body.note-active .note-message{
 
 
 <div class="contact-links">
+
+
+    <a class="mail-link">
+
+        mail
+
+    </a>
+
 
 
     <a class="note-link"
@@ -461,11 +592,36 @@ body.note-active .note-message{
 
 
 
+<div class="mail-message">
+
+    soshi.tennis@gmail.com
+
+</div>
+
+
+
+
+<div class="copy-message">
+
+    copied
+
+</div>
+
+
+
+
+
 
 <script>
 
 
 const noteLink = document.querySelector(".note-link");
+
+const mailLink = document.querySelector(".mail-link");
+
+const copyMessage = document.querySelector(".copy-message");
+
+
 
 
 
@@ -480,6 +636,50 @@ noteLink.addEventListener("mouseenter",()=>{
 noteLink.addEventListener("mouseleave",()=>{
 
     document.body.classList.remove("note-active");
+
+});
+
+
+
+
+
+mailLink.addEventListener("mouseenter",()=>{
+
+    document.body.classList.add("mail-active");
+
+});
+
+
+
+mailLink.addEventListener("mouseleave",()=>{
+
+    document.body.classList.remove("mail-active");
+
+});
+
+
+
+
+
+mailLink.addEventListener("click",()=>{
+
+
+    navigator.clipboard.writeText(
+        "soshi.tennis@gmail.com"
+    );
+
+
+    copyMessage.classList.add("show");
+
+
+
+    setTimeout(()=>{
+
+        copyMessage.classList.remove("show");
+
+    },1500);
+
+
 
 });
 
