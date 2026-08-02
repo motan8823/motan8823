@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contact | 森颯詩</title>
 
 <style>
@@ -13,14 +14,22 @@
     box-sizing:border-box;
 }
 
+
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
     background:#fff;
     color:#111;
     overflow:hidden;
+
+    transition:
+    background .3s ease,
+    color .3s ease;
 }
 
+
+
 /* Navigation */
+
 nav{
     position:fixed;
     top:40px;
@@ -32,48 +41,158 @@ nav{
     z-index:9999;
 }
 
+
 nav a{
     color:#111;
     text-decoration:none;
     font-size:20px;
     font-weight:300;
     letter-spacing:.15em;
-    transition:color .3s ease, transform .3s ease;
+
+    transition:
+    color .3s ease,
+    transform .3s ease;
 }
+
 
 nav a:hover{
     color:#ff0088;
     transform:translateX(-8px);
 }
 
+
 nav a.active{
     color:#ff0088;
 }
 
+
+
 /* Contact Links */
+
+
 .contact-links{
     position:fixed;
     left:40px;
     bottom:40px;
+
     display:flex;
     flex-direction:column;
     gap:28px;
+
+    z-index:9999;
 }
+
 
 .contact-links a{
     color:#111;
     text-decoration:none;
+
     font-size:84px;
     font-weight:300;
-    line-height:0.95;
-    transition:color .3s ease, transform .3s ease;
+    line-height:.95;
+
+    transition:
+    color .3s ease,
+    transform .3s ease;
 }
+
 
 .contact-links a:hover{
     color:#ff0088;
     transform:translateX(10px);
 }
 
+
+
+/* note演出 */
+
+.note-title{
+
+    position:fixed;
+
+    top:-150px;
+    left:-100px;
+
+    font-size:180px;
+    font-weight:300;
+
+    letter-spacing:.12em;
+
+    color:#fff;
+
+    opacity:0;
+
+    transition:
+    all 1s cubic-bezier(.22,1,.36,1);
+
+    z-index:10000;
+}
+
+
+
+.note-message{
+
+    position:fixed;
+
+    right:-100px;
+    bottom:-300px;
+
+    width:520px;
+
+    font-size:42px;
+    font-weight:200;
+
+    line-height:1.8;
+    letter-spacing:.12em;
+
+    color:#fff;
+
+    opacity:0;
+
+    transition:
+    all 1.2s cubic-bezier(.22,1,.36,1);
+
+    z-index:10000;
+}
+
+
+
+body.note-active{
+
+    background:#000;
+    color:#fff;
+
+}
+
+
+body.note-active nav a,
+body.note-active .contact-links a{
+
+    color:#fff;
+
+}
+
+
+
+body.note-active .note-title{
+
+    top:40px;
+    left:40px;
+
+    opacity:.85;
+
+}
+
+
+
+body.note-active .note-message{
+
+    right:80px;
+    bottom:60px;
+
+    opacity:1;
+
+}
 @media(max-width:768px){
 
     nav{
@@ -82,50 +201,168 @@ nav a.active{
         gap:14px;
     }
 
+
     nav a{
         font-size:16px;
     }
 
+
     .contact-links{
+
         left:24px;
         bottom:24px;
         gap:18px;
+
     }
 
+
     .contact-links a{
+
         font-size:56px;
+
+    }
+
+
+    .note-title{
+
+        font-size:80px;
+
+    }
+
+
+    .note-message{
+
+        width:300px;
+
+        font-size:28px;
+
+        right:20px;
+
+    }
+
+
+    body.note-active .note-title{
+
+        top:30px;
+        left:20px;
+
+    }
+
+
+    body.note-active .note-message{
+
+        right:20px;
+        bottom:40px;
+
     }
 
 }
+
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <nav>
-    <a href="design.html">design</a>
-    <a href="art.html">art</a>
-    <a href="profile.html">profile</a>
-    <a href="contact.html" class="active">contact</a>
+
+    <a href="design.html">
+        design
+    </a>
+
+    <a href="art.html">
+        art
+    </a>
+
+    <a href="profile.html">
+        profile
+    </a>
+
+    <a href="contact.html" class="active">
+        contact
+    </a>
+
 </nav>
+
+
 
 <div class="contact-links">
 
-    <a href="https://note.com/motan_8823"
+
+    <a class="note-link"
+       href="https://note.com/motan_8823"
        target="_blank"
        rel="noopener noreferrer">
+
         note
+
     </a>
+
+
 
     <a href="https://www.instagram.com/motan_8823/"
        target="_blank"
        rel="noopener noreferrer">
+
         instagram
+
     </a>
+
 
 </div>
 
+
+
+<!-- note hover animation -->
+
+<div class="note-title">
+
+    森 颯詩
+
+</div>
+
+
+
+<div class="note-message">
+
+    周りを<br>
+    経済的にも<br>
+    感情的にも<br>
+    豊かにできる人が、<br>
+    面白い人だと思っています。
+
+</div>
+
+
+
+<script>
+
+
+const noteLink = document.querySelector(".note-link");
+
+
+noteLink.addEventListener("mouseenter",()=>{
+
+    document.body.classList.add("note-active");
+
+});
+
+
+
+noteLink.addEventListener("mouseleave",()=>{
+
+    document.body.classList.remove("note-active");
+
+});
+
+
+</script>
+
+
+
 </body>
+
 </html>
