@@ -20,7 +20,7 @@ body{
     overflow:hidden;
 }
 
-/* ナビゲーション（indexと同じ） */
+/* Navigation */
 nav{
     position:fixed;
     top:40px;
@@ -37,7 +37,7 @@ nav a{
     text-decoration:none;
     font-size:20px;
     font-weight:300;
-    letter-spacing:0.15em;
+    letter-spacing:.15em;
     transition:color .3s ease, transform .3s ease;
 }
 
@@ -46,14 +46,18 @@ nav a:hover{
     transform:translateX(-8px);
 }
 
-/* 左下リンク */
+nav a.active{
+    color:#ff0088;
+}
+
+/* Contact Links */
 .contact-links{
     position:fixed;
     left:40px;
     bottom:40px;
     display:flex;
     flex-direction:column;
-    gap:24px;
+    gap:28px;
 }
 
 .contact-links a{
@@ -70,7 +74,7 @@ nav a:hover{
     transform:translateX(10px);
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     nav{
         top:24px;
@@ -104,7 +108,7 @@ nav a:hover{
     <a href="design.html">design</a>
     <a href="art.html">art</a>
     <a href="profile.html">profile</a>
-    <a href="contact.html">contact</a>
+    <a href="contact.html" class="active">contact</a>
 </nav>
 
 <div class="contact-links">
