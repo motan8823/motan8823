@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | 森颯詩</title>
 
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+    background:#fff;
+    color:#111;
+    overflow:hidden;
+}
+
+/* ナビゲーション（indexと同じ） */
+nav{
+    position:fixed;
+    top:40px;
+    right:50px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:20px;
+    z-index:9999;
+}
+
+nav a{
+    color:#111;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:300;
+    letter-spacing:0.15em;
+    transition:color .3s ease, transform .3s ease;
+}
+
+nav a:hover{
+    color:#ff0088;
+    transform:translateX(-8px);
+}
+
+/* 左下リンク */
+.contact-links{
+    position:fixed;
+    left:40px;
+    bottom:40px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.contact-links a{
+    color:#111;
+    text-decoration:none;
+    font-size:84px;
+    font-weight:300;
+    line-height:0.95;
+    transition:color .3s ease, transform .3s ease;
+}
+
+.contact-links a:hover{
+    color:#ff0088;
+    transform:translateX(10px);
+}
+
+@media (max-width:768px){
+
+    nav{
+        top:24px;
+        right:24px;
+        gap:14px;
+    }
+
+    nav a{
+        font-size:16px;
+    }
+
+    .contact-links{
+        left:24px;
+        bottom:24px;
+        gap:18px;
+    }
+
+    .contact-links a{
+        font-size:56px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="design.html">design</a>
+    <a href="art.html">art</a>
+    <a href="profile.html">profile</a>
+    <a href="contact.html">contact</a>
+</nav>
+
+<div class="contact-links">
+
+    <a href="https://note.com/motan_8823"
+       target="_blank"
+       rel="noopener noreferrer">
+        note
+    </a>
+
+    <a href="https://www.instagram.com/motan_8823/"
+       target="_blank"
+       rel="noopener noreferrer">
+        instagram
+    </a>
+
+</div>
+
+</body>
+</html>
