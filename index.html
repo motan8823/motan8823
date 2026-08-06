@@ -142,9 +142,9 @@
         loop
         playsinline
         webkit-playsinline
-        preload="metadata"
+        preload="auto"
     >
-        <source src="001_safari.mp4" type="video/mp4">
+        <source src="001.mp4" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
@@ -171,28 +171,33 @@
 
 
     <script>
-    window.addEventListener("load", () => {
+        window.addEventListener("load", () => {
 
-        const video = document.getElementById("bg-video");
+            const video = document.getElementById("bg-video");
 
-        video.muted = true;
-        video.volume = 0;
+            video.muted = true;
+            video.setAttribute("muted", "");
 
-        const playVideo = () => {
-            video.play()
-            .then(() => {
-                console.log("動画再生成功");
-            })
-            .catch(() => {
-                console.log("自動再生ブロック");
+            const playVideo = async () => {
+                try{
+                    await video.play();
+                    console.log("動画再生成功");
+                }catch(error){
+                    console.log("動画再生失敗", error);
+                }
+            };
+
+            playVideo();
+
+            document.addEventListener("visibilitychange", () => {
+                if(!document.hidden){
+                    playVideo();
+                }
             });
-        };
 
-        video.addEventListener("loadeddata", playVideo);
+            window.addEventListener("focus", playVideo);
 
-        playVideo();
-
-    });
+        });
     </script>
 
 </body>
