@@ -35,7 +35,9 @@ body{
 
 
 
-/* Navigation */
+/* =================================================
+   Navigation
+================================================= */
 
 nav{
 
@@ -69,13 +71,11 @@ nav a{
 
     letter-spacing:.15em;
 
-
     transition:
     color .3s ease,
     transform .3s ease;
 
 }
-
 
 
 nav a:hover{
@@ -87,7 +87,6 @@ nav a:hover{
 }
 
 
-
 nav a.active{
 
     color:#ff0088;
@@ -96,8 +95,9 @@ nav a.active{
 
 
 
-/* Contact Links */
-
+/* =================================================
+   Contact Links
+================================================= */
 
 .contact-links{
 
@@ -106,7 +106,6 @@ nav a.active{
     left:40px;
 
     bottom:40px;
-
 
     display:flex;
 
@@ -121,18 +120,15 @@ nav a.active{
 }
 
 
-
 .contact-links a{
 
     display:inline-block;
 
     width:max-content;
 
-
     color:#111;
 
     text-decoration:none;
-
 
     font-size:84px;
 
@@ -140,13 +136,11 @@ nav a.active{
 
     line-height:.95;
 
-
     transition:
     color .3s ease,
     transform .3s ease;
 
 }
-
 
 
 .contact-links a:hover{
@@ -159,7 +153,7 @@ nav a.active{
 
 
 
-/* note hover */
+/* note */
 
 .note-link:hover{
 
@@ -169,7 +163,7 @@ nav a.active{
 
 
 
-/* mail hover */
+/* mail */
 
 .mail-link:hover{
 
@@ -179,8 +173,232 @@ nav a.active{
 
 
 
-/* note演出 */
+/* Instagram */
 
+.instagram-link:hover{
+
+    color:#ff0088 !important;
+
+}
+
+
+
+/* =================================================
+   Instagram Gallery
+================================================= */
+
+.instagram-gallery{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    overflow:hidden;
+
+}
+
+
+.instagram-gallery img{
+
+    position:absolute;
+
+    display:block;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+        transform 1.15s cubic-bezier(.22,1,.36,1),
+        opacity .7s ease;
+
+    will-change:transform,opacity;
+
+}
+
+
+
+/* =================================================
+   画像1：サンダル
+   左上から入る
+================================================= */
+
+.gallery-sandal{
+
+    width:240px;
+    height:240px;
+
+    left:8vw;
+    top:8vh;
+
+    transform:
+        translate(-130vw,-80vh)
+        rotate(-25deg)
+        scale(.75);
+
+}
+
+
+
+/* =================================================
+   画像2：クラゲマン
+   右上から入る
+================================================= */
+
+.gallery-kurageman{
+
+    width:280px;
+    height:280px;
+
+    right:8vw;
+    top:12vh;
+
+    transform:
+        translate(120vw,-70vh)
+        rotate(28deg)
+        scale(.75);
+
+}
+
+
+
+/* =================================================
+   画像3：クラゲ
+   左下から入る
+================================================= */
+
+.gallery-kurage{
+
+    width:300px;
+    height:300px;
+
+    left:18vw;
+    bottom:8vh;
+
+    transform:
+        translate(-120vw,80vh)
+        rotate(24deg)
+        scale(.75);
+
+}
+
+
+
+/* =================================================
+   画像4：貝殻にぎり
+   右下から入る
+================================================= */
+
+.gallery-kaigara{
+
+    width:260px;
+    height:260px;
+
+    right:18vw;
+    bottom:10vh;
+
+    transform:
+        translate(120vw,80vh)
+        rotate(-24deg)
+        scale(.75);
+
+}
+
+
+
+/* =================================================
+   Instagram Hover
+================================================= */
+
+body.instagram-active .instagram-gallery img{
+
+    opacity:1;
+
+}
+
+
+
+/* -------------------------
+   サンダル
+------------------------- */
+
+body.instagram-active .gallery-sandal{
+
+    transform:
+        translate(0,0)
+        rotate(-9deg)
+        scale(1);
+
+    transition-delay:.00s;
+
+}
+
+
+
+/* -------------------------
+   クラゲマン
+------------------------- */
+
+body.instagram-active .gallery-kurageman{
+
+    transform:
+        translate(0,0)
+        rotate(8deg)
+        scale(1);
+
+    transition-delay:.08s;
+
+}
+
+
+
+/* -------------------------
+   クラゲ
+------------------------- */
+
+body.instagram-active .gallery-kurage{
+
+    transform:
+        translate(0,0)
+        rotate(6deg)
+        scale(1);
+
+    transition-delay:.16s;
+
+}
+
+
+
+/* -------------------------
+   貝殻にぎり
+------------------------- */
+
+body.instagram-active .gallery-kaigara{
+
+    transform:
+        translate(0,0)
+        rotate(-7deg)
+        scale(1);
+
+    transition-delay:.24s;
+
+}
+
+
+
+/* =================================================
+   note演出
+================================================= */
 
 .note-title{
 
@@ -190,65 +408,48 @@ nav a.active{
 
     left:-100px;
 
-
     font-size:130px;
 
     font-weight:300;
 
-
     letter-spacing:.12em;
-
 
     color:#fff;
 
-
     opacity:0;
-
 
     transition:
     all 1s cubic-bezier(.22,1,.36,1);
 
-
     z-index:10000;
 
 }
-
-
-
 
 
 .note-message{
 
     position:fixed;
 
-
     right:-100px;
 
     bottom:-300px;
 
-
     width:520px;
-
 
     font-size:42px;
 
     font-weight:200;
 
-
     line-height:1.8;
 
     letter-spacing:.12em;
 
-
     color:#fff;
-
 
     opacity:0;
 
-
     transition:
     all 1.2s cubic-bezier(.22,1,.36,1);
-
 
     z-index:10000;
 
@@ -256,41 +457,31 @@ nav a.active{
 
 
 
-
-
-/* mail演出 */
-
+/* =================================================
+   mail演出
+================================================= */
 
 .mail-message{
 
     position:fixed;
 
-
     top:50%;
 
     left:50%;
 
-
     transform:translate(-50%,-50%);
-
 
     font-size:42px;
 
-
     font-weight:300;
-
 
     letter-spacing:.1em;
 
-
     color:#fff;
-
 
     opacity:0;
 
-
     transition:.8s ease;
-
 
     z-index:10000;
 
@@ -298,39 +489,33 @@ nav a.active{
 
 
 
+/* =================================================
+   コピー完了
+================================================= */
 
 .copy-message{
 
     position:fixed;
 
-
     top:55%;
 
     left:50%;
 
-
     transform:translateX(-50%);
-
 
     font-size:16px;
 
-
     letter-spacing:.2em;
-
 
     color:#ff0088;
 
-
     opacity:0;
 
-
     transition:.3s ease;
-
 
     z-index:10001;
 
 }
-
 
 
 .copy-message.show{
@@ -341,6 +526,9 @@ nav a.active{
 
 
 
+/* =================================================
+   note / mail 背景
+================================================= */
 
 body.note-active{
 
@@ -351,8 +539,6 @@ body.note-active{
 }
 
 
-
-
 body.mail-active{
 
     background:#000;
@@ -360,7 +546,6 @@ body.mail-active{
     color:#fff;
 
 }
-
 
 
 body.note-active nav a,
@@ -374,7 +559,9 @@ body.mail-active .contact-links a{
 
 
 
-
+/* =================================================
+   note表示
+================================================= */
 
 body.note-active .note-title{
 
@@ -385,9 +572,6 @@ body.note-active .note-title{
     opacity:.85;
 
 }
-
-
-
 
 
 body.note-active .note-message{
@@ -402,18 +586,31 @@ body.note-active .note-message{
 
 
 
+/* =================================================
+   mail表示
+================================================= */
+
 body.mail-active .mail-message{
 
     opacity:1;
 
 }
+
+
+
+/* =================================================
+   Mobile
+================================================= */
+
 @media(max-width:768px){
 
 
     nav{
 
         top:24px;
+
         right:24px;
+
         gap:14px;
 
     }
@@ -430,7 +627,9 @@ body.mail-active .mail-message{
     .contact-links{
 
         left:24px;
+
         bottom:24px;
+
         gap:18px;
 
     }
@@ -476,6 +675,7 @@ body.mail-active .mail-message{
     body.note-active .note-title{
 
         top:30px;
+
         left:20px;
 
     }
@@ -485,13 +685,95 @@ body.mail-active .mail-message{
     body.note-active .note-message{
 
         right:20px;
+
         bottom:40px;
+
+    }
+
+
+
+    /* Instagram画像 */
+
+    .gallery-sandal{
+
+        width:150px;
+
+        height:150px;
+
+        left:5vw;
+
+        top:12vh;
+
+    }
+
+
+    .gallery-kurageman{
+
+        width:170px;
+
+        height:170px;
+
+        right:5vw;
+
+        top:14vh;
+
+    }
+
+
+    .gallery-kurage{
+
+        width:180px;
+
+        height:180px;
+
+        left:5vw;
+
+        bottom:18vh;
+
+    }
+
+
+    .gallery-kaigara{
+
+        width:160px;
+
+        height:160px;
+
+        right:5vw;
+
+        bottom:18vh;
 
     }
 
 
 }
 
+
+
+/* =================================================
+   JavaScriptでInstagramを外した時
+   transition-delayを無効化するための設定
+================================================= */
+
+.instagram-gallery img{
+
+    transition-property:
+        transform,
+        opacity;
+
+}
+
+
+
+/* =================================================
+   JavaScriptで戻る時に遅延をなくす
+================================================= */
+
+body:not(.instagram-active) .instagram-gallery img{
+
+    transition-delay:0s;
+
+}
 
 
 </style>
@@ -505,8 +787,11 @@ body.mail-active .mail-message{
 
 
 
-<nav>
+<!-- =================================================
+     Navigation
+================================================= -->
 
+<nav>
 
     <a href="design.html">
         design
@@ -527,12 +812,56 @@ body.mail-active .mail-message{
         contact
     </a>
 
-
 </nav>
 
 
 
 
+
+<!-- =================================================
+     Instagram Gallery
+================================================= -->
+
+<div class="instagram-gallery">
+
+
+    <img
+        src="サンダル.png"
+        class="gallery-sandal"
+        alt=""
+    >
+
+
+    <img
+        src="クラゲマン.png"
+        class="gallery-kurageman"
+        alt=""
+    >
+
+
+    <img
+        src="クラゲ.png"
+        class="gallery-kurage"
+        alt=""
+    >
+
+
+    <img
+        src="貝殻にぎり.jpg"
+        class="gallery-kaigara"
+        alt=""
+    >
+
+
+</div>
+
+
+
+
+
+<!-- =================================================
+     Contact Links
+================================================= -->
 
 <div class="contact-links">
 
@@ -545,10 +874,11 @@ body.mail-active .mail-message{
 
 
 
-    <a class="note-link"
-       href="https://note.com/motan_8823"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+        class="note-link"
+        href="https://note.com/motan_8823"
+        target="_blank"
+        rel="noopener noreferrer">
 
         note
 
@@ -556,30 +886,32 @@ body.mail-active .mail-message{
 
 
 
-    <a href="https://www.instagram.com/motan_8823/"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+        class="instagram-link"
+        href="https://www.instagram.com/motan_8823/"
+        target="_blank"
+        rel="noopener noreferrer">
 
         instagram
 
     </a>
 
 
-
 </div>
 
 
 
 
 
+<!-- =================================================
+     Note
+================================================= -->
 
 <div class="note-title">
 
     森 颯詩
 
 </div>
-
-
 
 
 
@@ -598,6 +930,10 @@ body.mail-active .mail-message{
 
 
 
+<!-- =================================================
+     Mail
+================================================= -->
+
 <div class="mail-message">
 
     soshi.tennis@gmail.com
@@ -606,6 +942,11 @@ body.mail-active .mail-message{
 
 
 
+
+
+<!-- =================================================
+     Copy
+================================================= -->
 
 <div class="copy-message">
 
@@ -617,26 +958,41 @@ body.mail-active .mail-message{
 
 
 
-
 <script>
 
 
-const noteLink = document.querySelector(".note-link");
+/* =================================================
+   Elements
+================================================= */
 
-const mailLink = document.querySelector(".mail-link");
-
-const copyMessage = document.querySelector(".copy-message");
-
+const noteLink =
+    document.querySelector(".note-link");
 
 
+const mailLink =
+    document.querySelector(".mail-link");
 
+
+const instagramLink =
+    document.querySelector(".instagram-link");
+
+
+const copyMessage =
+    document.querySelector(".copy-message");
+
+
+
+
+
+/* =================================================
+   note
+================================================= */
 
 noteLink.addEventListener("mouseenter",()=>{
 
     document.body.classList.add("note-active");
 
 });
-
 
 
 noteLink.addEventListener("mouseleave",()=>{
@@ -649,12 +1005,15 @@ noteLink.addEventListener("mouseleave",()=>{
 
 
 
+/* =================================================
+   mail
+================================================= */
+
 mailLink.addEventListener("mouseenter",()=>{
 
     document.body.classList.add("mail-active");
 
 });
-
 
 
 mailLink.addEventListener("mouseleave",()=>{
@@ -678,7 +1037,6 @@ mailLink.addEventListener("click",()=>{
     copyMessage.classList.add("show");
 
 
-
     setTimeout(()=>{
 
         copyMessage.classList.remove("show");
@@ -686,6 +1044,26 @@ mailLink.addEventListener("click",()=>{
     },1500);
 
 
+});
+
+
+
+
+
+/* =================================================
+   Instagram
+================================================= */
+
+instagramLink.addEventListener("mouseenter",()=>{
+
+    document.body.classList.add("instagram-active");
+
+});
+
+
+instagramLink.addEventListener("mouseleave",()=>{
+
+    document.body.classList.remove("instagram-active");
 
 });
 
@@ -696,6 +1074,5 @@ mailLink.addEventListener("click",()=>{
 
 
 </body>
-
 
 </html>
